@@ -1,7 +1,7 @@
 "use client";
 import styles from "./page.module.css";
 import Works from "@/compornents/works/works";
-import Career from "@/compornents/career/career";
+import CareerComponent from "@/compornents/career/career";
 import Contact from "@/compornents/contact/contact";
 import { motion } from "framer-motion";
 
@@ -72,7 +72,7 @@ export default function Home() {
             className={styles.contents_title}>Career</motion.h2>
         </div>
         <div className={styles.contents_right}>
-          <Career />
+          <CareerComponent />
         </div>
       </section>
       <section className={styles.contents_container} >

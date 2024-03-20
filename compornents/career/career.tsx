@@ -3,18 +3,18 @@ import { Career } from "@/type/career";
 import styles from './career.module.css';
 import { useEffect, useState } from "react";
 
-export default function Career() {
-    const [career, setCareer] = useState<Career[]>([]);
+export default function CareerComponent() {
+    const [careerdata, setCareerdata] = useState<Career[]>([]);
 
     useEffect(() => {
         getCareer().then(data => {
-            setCareer(data);
+            setCareerdata(data);
         });
     }, []);
 
     return (
         <div className={styles.career_container}>
-            {career.map((career) => {
+            {careerdata.map((career) => {
                 return (
                     <div className={styles.career_item} key={career.id}>
                         <h2 className={styles.career_date}>
