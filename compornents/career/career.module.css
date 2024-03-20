@@ -1,0 +1,96 @@
+/* Career root */
+.career_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+/* Career Item */
+.career_item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-left: 2px solid black;
+    padding-left: 20px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.career_item:hover {
+    background-color: azure;
+}
+
+
+.career_item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 5rem;
+    height: 2px;
+    background-color: black;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+/* Career Date */
+.career_date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+    border-radius: 50%;
+    height: 8rem;
+    width: 8rem;
+    flex-shrink: 0;
+    flex-basis: 8rem;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .career_date {
+        height: 6rem;
+        width: 6rem;
+        flex-basis: 6rem;
+    }
+
+}
+
+.career_date_year {
+    font-family: brevier, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+    .career_date_year {
+        font-size: 1.5rem;
+    }
+}
+
+.career_date_month {
+    font-family: brevier, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* Career Content */
+.career_detail {
+    margin-left: 2rem;
+    margin-right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .career_detail {
+        margin-left: 1rem;
+        font-size: 0.8rem;
+    }
+}
