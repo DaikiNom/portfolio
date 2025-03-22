@@ -1,0 +1,75 @@
+---
+import type { Career } from "@/types/career";
+import { getCareer } from "@/lib/microcms";
+
+const careers: Career[] = await getCareer();
+---
+
+<ul class="career-timeline">
+    {
+        careers.map((c) => (
+            <li class="career-timeline-item">
+                <span
+                    class="career-timeline-item-date"
+                    data-year={new Date(c.date).getFullYear()}
+                >
+                    0000
+                </span>
+                <div class="career-timeline-item-content">
+                    <h3 class="career-timeline-item-detail">{c.detail}</h3>
+                </div>
+            </li>
+        ))
+    }
+</ul>
+
+<style>
+    .career-timeline {
+        list-style: none;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .career-timeline-item {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: relative;
+    }
+
+    .career-timeline-item-date {
+        display: inline-flex;
+        justify-content: flex-end;
+        flex-basis: 5rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-right: 1rem;
+        width: 5rem;
+    }
+    .career-timeline-item-content {
+        padding: 1rem;
+        display: block;
+        width: 100%;
+        border-left: 2px solid #5f5f5f;
+    }
+    .career-timeline-item-detail {
+        position: relative;
+        min-height: 1em;
+        padding: 1em;
+        background: #f6f6f6;
+        border-radius: 6px;
+        font-size: clamp(0.8rem, 0.571rem + 0.94vw, 1.7rem);
+    }
+    .career-timeline-item-detail::before {
+        content: "";
+        position: absolute;
+        top: calc(50% - 0.75rem);
+        left: -1.75rem;
+        background: #5f5f5f;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+    }
+</style>

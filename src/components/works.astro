@@ -1,0 +1,183 @@
+---
+import type { MicroCMSImage } from "microcms-js-sdk";
+import { Image } from "astro:assets";
+import "@fontsource/lato/700.css";
+
+import githubIcon from "@/assets/github.svg";
+
+export interface workProps {
+    title: string;
+    genre: string[];
+    description?: string;
+    image?: MicroCMSImage;
+    link?: string;
+    code?: string;
+}
+const { title, genre, description, image, link, code } = Astro.props;
+---
+
+<div
+    class="item"
+    style={{
+        backgroundImage: `url(${image?.url})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        repeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        backgroundColor: "rgba(255, 255, 255, 0.75)",
+        backgroundBlendMode: "overlay",
+        backdropFilter: "blur(10px)",
+    }}
+>
+    <h1 class="item-title">{title}</h1>
+    <p class="item-description">{description}</p>
+    <div class="item-urls">
+        {
+            link &&
+                (genre == "software" ? (
+                    <p class="link">
+                        ご利用は
+                        <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            こちら
+                        </a>
+                    </p>
+                ) : genre == "research" ? (
+                    <p class="link">
+                        詳細は
+                        <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            こちら
+                        </a>
+                    </p>
+                ) : genre == "movie" ? (
+                    <p class="link">
+                        視聴は
+                        <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            こちら
+                        </a>
+                    </p>
+                ) : (
+                    <p>
+                        詳細は
+                        <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            こちら
+                        </a>
+                    </p>
+                ))
+        }
+        {
+            code && (
+                <a
+                    href={code}
+                    class="repo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Image
+                        class="icon"
+                        src={githubIcon}
+                        alt="GitHub"
+                        width="24"
+                        height="24"
+                    />
+                    <span id="split" />
+                    {code.split("/").slice(-2).join("/")}
+                </a>
+            )
+        }
+    </div>
+
+    <style>
+        .item {
+            display: grid;
+            place-items: center start;
+            box-sizing: border-box;
+            height: 100svh;
+            width: 100%;
+            padding: 1rem;
+            padding-top: 3rem;
+        }
+        .item-title {
+            margin-left: auto;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            text-align: right;
+            text-wrap: balance;
+            font-family: "Lato", sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        .item-description {
+            margin-left: auto;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            text-align: right;
+            text-wrap: balance;
+            font-size: 1rem;
+            max-width: 80%;
+        }
+        @media (min-width: 768px) {
+            .item-description {
+                max-width: 25%;
+            }
+        }
+        @media (max-width: 768px) {
+            .item-description {
+                max-width: 50%;
+            }
+        }
+        .item-urls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+        }
+        .link {
+            font-size: 1rem;
+            background-color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+        }
+        .repo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            margin: 0 auto;
+            border-radius: 1rem;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: background-color 0.3s;
+        }
+        .repo:hover {
+            background-color: #444;
+        }
+        .icon {
+            height: 1rem;
+            width: 1rem;
+        }
+        #split {
+            width: 1px;
+            height: 1rem;
+            background-color: #fff;
+            margin: 0 0.25rem;
+        }
+    </style>
+</div>

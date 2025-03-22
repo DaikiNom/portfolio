@@ -1,0 +1,161 @@
+---
+import Image from "astro/components/Image.astro";
+import { Icon } from "astro-icon/components";
+
+import nameSvg from "@/assets/name.svg";
+
+import { getSocial } from "@/lib/microcms";
+import type { Social } from "@/types/social";
+
+const socials: Social[] = await getSocial();
+---
+
+<header class="header">
+    <a href="/">
+        <Image class="header-name" src={nameSvg} alt="Daiki Nomura" />
+    </a>
+    <nav class="social">
+        <ul>
+            {
+                socials.map((s) => (
+                    <li>
+                        <a
+                            href={s.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Icon class="social-icon" name={s.icon} />
+                        </a>
+                    </li>
+                ))
+            }
+            <li>
+                <a href="javascript:mail_to('', '')">
+                    <Icon class="social-icon" name="bxl:gmail" />
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        z-index: 5;
+        width: 100%;
+        height: 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.25rem 0;
+    }
+    .header-name {
+        width: 10rem;
+        height: 100%;
+    }
+    .social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .social ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+    }
+    .social ul li {
+        margin: 0 0.5rem;
+    }
+    .social-icon {
+        width: 2rem;
+        height: 2rem;
+        color: black;
+    }
+</style>
+
+<script type="text/javascript">
+    function converter(M) {
+        var str = "",
+            str_as = "";
+        for (var i = 0; i < M.length; i++) {
+            str_as = M.charCodeAt(i);
+            str += String.fromCharCode(str_as + 1);
+        }
+        return str;
+    }
+    function mail_to(k_1, k_2) {
+        eval(
+            String.fromCharCode(
+                108,
+                111,
+                99,
+                97,
+                116,
+                105,
+                111,
+                110,
+                46,
+                104,
+                114,
+                101,
+                102,
+                32,
+                61,
+                32,
+                39,
+                109,
+                97,
+                105,
+                108,
+                116,
+                111,
+                58,
+            ) +
+                escape(k_1) +
+                converter(
+                    String.fromCharCode(
+                        98,
+                        110,
+                        109,
+                        115,
+                        96,
+                        98,
+                        115,
+                        63,
+                        99,
+                        96,
+                        104,
+                        106,
+                        104,
+                        109,
+                        110,
+                        108,
+                        116,
+                        113,
+                        96,
+                        45,
+                        115,
+                        100,
+                        98,
+                        103,
+                        62,
+                        114,
+                        116,
+                        97,
+                        105,
+                        100,
+                        98,
+                        115,
+                        60,
+                    ),
+                ) +
+                escape(k_2) +
+                "'",
+        );
+    }
+</script>
