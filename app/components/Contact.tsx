@@ -58,7 +58,7 @@ export default function Contact() {
             {/* お問い合わせフォーム */}
             <div className="neumorphism p-8">
               
-              <form className="space-y-6" action="https://formsubmit.co/contact@daikinomura.tech" method="POST">
+              <form className="space-y-6" action="https://formsubmit.co/6e27fbceea12469da132995af3aa4a96" method="POST">
                 { /* FormSubmit関連 */}
                 <input type="text" name="_honey" className="invisible"></input>
                 <input type="hidden" name="_template" value="box"></input>
