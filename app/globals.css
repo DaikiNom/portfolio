@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #e0e5ec;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --accent: #667eea;
+  --shadow-light: #ffffff;
+  --shadow-dark: #a3b1c6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* テキスト選択時の背景色 */
+::selection {
+  background-color: #c5c9d1;
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background-color: #c5c9d1;
+  color: var(--text-primary);
+}
+
+.neumorphism {
+  background: var(--bg-color);
+  box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+  border-radius: 20px;
+}
+
+.neumorphism-inset {
+  background: var(--bg-color);
+  box-shadow: inset 8px 8px 16px var(--shadow-dark), inset -8px -8px 16px var(--shadow-light);
+  border-radius: 20px;
+}
+
+.neumorphism-inset:focus {
+  outline: 0.5px solid var(--accent);
+}
+
+.neumorphism-small {
+  background: var(--bg-color);
+  box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light);
+  border-radius: 12px;
+}
+
+.neumorphism-button {
+  background: var(--bg-color);
+  box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.neumorphism-button:hover {
+  box-shadow: inset 6px 6px 12px var(--shadow-dark), inset -6px -6px 12px var(--shadow-light);
+}
+
+.neumorphism-button:active {
+  box-shadow: inset 8px 8px 16px var(--shadow-dark), inset -8px -8px 16px var(--shadow-light);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 768px) {
+  .neumorphism {
+    box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+    border-radius: 16px;
+  }
+
+  .neumorphism-small {
+    box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+    border-radius: 10px;
+  }
+}
+
+/* ローディングアニメーション用のスタイル */
+.loading-screen svg path {
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+  stroke: none;
+  fill: none;
+  opacity: 0;
+}
+
+/* アニメーション開始前の状態を隠す */
+.loading-screen svg {
+  opacity: 0;
+}
