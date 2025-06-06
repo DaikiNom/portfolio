@@ -23,7 +23,7 @@ export default function About() {
   ]
 
   return (
-    <section className="h-dvh flex items-center justify-center px-3 md:px-4 py-4 md:py-8 relative overflow-hidden">
+    <section className="h-lvh flex items-center justify-center px-3 md:px-4 py-4 md:py-8 relative overflow-hidden">
       <div className="container mx-auto max-w-5xl h-full flex items-center">
         <div
           className={`hero-content flex flex-col lg:flex-row items-center gap-6 lg:gap-16 transition-all duration-1000 w-full ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}

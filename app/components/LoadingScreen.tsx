@@ -141,8 +141,7 @@ export default function LoadingScreen() {
 
           {/* サブタイトル */}
           <p className="loading-subtitle text-gray-600 text-base md:text-xl font-light tracking-wider">
-            Creating innovative solutions<br />
-            with passion and precision
+            Shaping Tomorrow’s Connected World
           </p>
         </div>
       </div>
