@@ -105,16 +105,6 @@ export default function Portfolio({ portfolios }: PortfolioProps) {
               </div>
             ))}
           </div>
-
-          {/* メッセージ */}
-          <div className="mt-16 neumorphism p-8 text-center">
-            <h3 className="text-xl md:text-3xl font-bold mb-4 text-gray-800">挑戦と成長を続けるクリエイターを目指して</h3>
-            <p className="text-gray-700 leading-relaxed max-w-4xl mx-auto text-xs md:text-base">
-              ソフトウェア開発における<strong className="text-purple-600">技術的スキル</strong>を磨きながら、  
-              セキュリティ分野でも知識を深めています。分野を問わず<strong className="text-blue-600">創造的な価値</strong>を提供することを目指し、  
-              常に<strong className="text-green-600">新しいアイデアと技術</strong>を取り入れて、成長し続けています。
-            </p>
-          </div>
         </div>
       </div>
     </section>

@@ -138,11 +138,6 @@ export default function LoadingScreen() {
                 <path d="M1814.97,92.25c16.12,0,35.25,6,46.12,21.75l1.12-16.88h39v127.88h-39l-1.12-16.88c-10.88,15.75-30,21.75-46.12,21.75-34.12,0-60.75-27.75-60.75-69s26.62-68.62,60.75-68.62ZM1828.47,199.12c16.12,0,32.25-12.38,32.25-38.25s-16.12-37.88-32.25-37.88-32.25,13.12-32.25,37.88,15.38,38.25,32.25,38.25Z"/>
               </svg>
           </div>
-
-          {/* サブタイトル */}
-          <p className="loading-subtitle text-gray-600 text-base md:text-xl font-light tracking-wider">
-            Shaping Tomorrow’s Connected World
-          </p>
         </div>
       </div>
     </div>

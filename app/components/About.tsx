@@ -62,10 +62,9 @@ export default function About() {
 
               <div className="neumorphism p-3 md:p-4 lg:p-6">
                 <p className="text-gray-700 leading-relaxed text-xs md:text-sm lg:text-base mb-2 md:mb-3">
-                2006年生まれ。
-                システムエンジニアである父の影響から、幼少期より情報技術に強い関心を持つ。
+                  電気工学の研究者であった祖父と，システムエンジニアである父の影響から、幼少期より情報技術に強い関心を持つ。
                 中学時代にはITインフラにも関心を持ち、自宅にサーバーを設置するなど、システム設計や運用に関する知識を深める。
-                高校時代には、スクールバスの位置情報を共有するアプリ「N-BOIS」を開発し、プロジェクト管理やUI設計などの実践的なスキルを習得。
+                高校時代には、スクールバスの位置情報を共有するアプリ「N-BOIS」の開発や応用情報技術者試験に合格を通し、プロジェクト管理やUI設計などの実践的なスキルを習得。
                 </p>
                 <p className="text-gray-700 leading-relaxed text-xs md:text-sm lg:text-base mb-2 md:mb-3">
                 現在は、セキュリティ分野に特化した技術の向上を目指して日々努力を重ねている。
