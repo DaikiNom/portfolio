@@ -20,7 +20,7 @@ export default function LoadingScreen() {
           if (containerRef.current) {
             gsap.to(containerRef.current, {
               opacity: 0,
-              duration: 1,
+              duration: 0.5,
               ease: "power2.inOut",
               onComplete: () => {
                 setIsVisible(false)
@@ -28,7 +28,7 @@ export default function LoadingScreen() {
               },
             })
           }
-        }, 1000)
+        }, 500)
       },
     })
 
